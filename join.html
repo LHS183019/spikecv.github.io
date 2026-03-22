@@ -1,0 +1,270 @@
+<!-- TODO: fix the href after translation of CONTRIBUTING.md etc. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>SpikeCV</title>
+	<link rel="icon" href="../assets/logo/spikecv.png">
+	<!-- bootstrap core css -->
+	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+	<!-- Custom styles for our template -->
+	<link rel="stylesheet" href="../assets/css/bootstrap-theme.css" media="screen" >
+	<link rel="stylesheet" href="../assets/css/style.css">
+	<link href="../assets/css/responsive.css" rel="stylesheet" />
+	<!--[if lt IE 9]>
+	<script src="../assets/js/html5shiv.js"></script>
+	<script src="../assets/js/respond.min.js"></script>
+	<![endif]-->
+   
+</head>
+
+<body>
+
+<!-- Dynamically load navbar -->
+<div id="navbar"></div>
+
+<header id="head" class="secondary"></header>
+
+<section class="herotxt">
+<!--<div class="container text-center sectionBox">
+  <h2 >Welcome!</h2>
+  <p class="text-muted"> Nullam ac rhoncus sapien, non gravida purus. Alinon elit imperdiet congue. Integer ultricies<br/>
+    Sed elit imperdiet congue. Integer ultricies sed ligula eget tempus. </p>
+</div>-->
+<div class="container sectionBox">
+  <div class="row">
+    <div class="col-md-12" style="text-align: center;">
+      <span>
+        <strong style="color:#FFF317"> SpikeCV </strong> Open Source Contribution Guide
+      </span>
+      <p>        Thank you for your interest in the SpikeCV project! Every contribution you make will help advance spike-based vision.
+</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="sectionBox" >
+<div class="container"> 
+    <div class="row" style="display: flex; align-items: center; justify-content: center; ">         
+        <div class="col-md-6" >
+          <div style="text-align: center;">  
+            <h3>Follow this guide to start your open source contribution journey!</h3>
+            <blockquote class="blockquote-1">
+            <p>"Together, Let's spark a butterfly effect."</p>
+            <small>SpikeCV Team</small> </blockquote>
+          </div> 
+        </div>
+        <div class="col-md-6">
+            <div class="blockquote-box blockquote-info clearfix">
+              <div class="heading">  
+                <h3>Step 1</h3>
+                <br/>
+              </div> 
+                <div class="square pull-left">
+                    <i class="fa fa-github fa-3x circle"></i>
+                </div>
+                <h4>
+                    Fork & Clone</h4>
+                <p>
+                    Please <strong>Fork</strong> our <a href="https://github.com/Zyj061/SpikeCV" target="_blank">GitHub repository</a> and clone it locally.
+    			</p>
+            </div>
+            <div class="blockquote-box blockquote-success clearfix">
+                <div class="square pull-left">
+                    <i class="fa fa-code-fork fa-3x circle"></i>
+                </div>
+                <h4>
+                    Create a Branch</h4>
+                <p>
+                    Create your feature branch from the <code>main</code> branch.
+                    <br>Naming example: <code>feature/algorithm-name</code>.
+                </p>
+            </div>
+            <div class="blockquote-box blockquote-primary clearfix">
+                <div class="square pull-left">
+                <i class="fa fa-cogs fa-3x circle"></i>                
+            </div>
+                <h4>
+                    Set Up the Development Environment</h4>
+                <p>
+                  Configure the environment and install dependencies following the <a href="https://github.com/Zyj061/SpikeCV/blob/main/README_en.md" target="_blank">README.md</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 3em;">         
+        <div class="heading" style="text-align: center;">  
+            <h3>Step 2</h3>
+            <br/>
+        </div> 
+        <!-- dynamic tabs -->
+        <ul class="nav navbar nav-justified" id="contributionTabs" style="margin-bottom: 20px; border-bottom: 2px solid #eec338;">
+            <li class="active"><a href="#dependency" data-toggle="tab">Manage Dependencies</a></li>
+            <li><a href="#algorithm" data-toggle="tab">Contribute Spike Algorithms</a></li>
+        </ul>
+        <div class="tab-content" id="contributionTabContent">
+            <!-- Contribute Algorithm Tab -->
+            <div class="tab-pane" id="algorithm">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div style="margin-bottom: 1em; margin-top: 2em;">
+                            <h3><i style="color: #ffa915; margin-right: 0.3em;" class="fa fa-code"></i> Algorithm Development</h3>
+                        </div>
+                        <p>Under <code>SpikeCV/spkProc/</code> choose an appropriate submodule (e.g., <code>filters</code>, <code>reconstruction</code>, etc.) and create your algorithm file <code>your_algorithm.py</code>.</p>
+                        <ul>
+                            <li>Class & Interface: Implement an algorithm class <code>YourAlgorithm</code>, typically including methods such as <code>__init__</code> (parameter initialization) and <code>process</code> (core logic).</li>
+                            <li>Coding Style: Follow PEP 8, add necessary comments, docstrings, type hints, etc.</li>
+                            <li>Progress Display: It is recommended to use the <code>tqdm</code> library to show processing progress.</li>
+                        </ul>
+                        <div style="margin-bottom: 1em; margin-top: 2em;">
+                            <h3><i style="color: #ffa915; margin-right: 0.3em;" class="fa fa-key"></i> Usage Example</h3>
+                        </div>
+                        <p>Add <code>test_your_algorithm.py</code> in <code>SpikeCV/examples/</code> to demonstrate the complete workflow from data loading to result output, helping users understand how to use the algorithm.</p>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div style="margin-bottom: 1em; margin-top: 2em;">
+                            <h3><i style="color: #ffa915; margin-right: 0.3em;" class="fa fa-book"></i> Algorithm Documentation</h3>
+                        </div>
+                        <p>A complete contribution involves more than just code; we use RST files for documentation management:</p>
+                        <ul>
+                            <li>Core documentation: Update <code>docs/source/核心操作.rst</code> to include your algorithm's principles and parameter descriptions.</li>
+                            <li>Example documentation: Update <code>docs/source/使用例子.rst</code> to describe your usage example and expected results.</li>
+                            <li>Multimedia resources: You can add result images/GIFs in the <code>docs/source/media/</code> directory and reference them in the documentation.</li>
+                        </ul>
+                        <p>We provide a documentation template reference in <a href="https://github.com/Zyj061/SpikeCV?tab=contributing-ov-file#%E6%96%87%E6%A1%A3%E7%BB%93%E6%9E%84%E5%8F%82%E8%80%83" target="_blank">CONTRIBUTING.md</a>.</p>
+                        <p>Your documentation will then be integrated into the SpikeCV <a href="https://spikecv.readthedocs.io" target="_blank">official documentation</a>.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Dependency Management Tab -->
+        <div class="tab-pane active" id="dependency">
+            <div class="row">
+                <div class="col-md-6">
+                    <div style="margin-bottom: 1em; margin-top: 2em;">
+                        <h3><i style="color: #ffa915; margin-right: 0.3em;" class="fa fa-plus-square"></i> Adding Dependencies</h3>
+                    </div>
+                    <p>If you need to add new dependencies, configure them as optional dependencies in <code>pyproject.toml</code>:</p>
+                    <pre style="background: #f8f9fa; padding: 10px; border-radius: 4px; border: 1px solid #ddd;">[project.optional-dependencies]
+your_deps_name  = [
+    "package>=1.0.0",
+    "package2>=2.0.0",
+]</pre>
+                    <pre style="background: #f8f9fa; padding: 10px; border-radius: 4px; border: 1px solid #ddd;"># Install specific dependencies:
+pip install -e ".[your_deps_name]"</pre>
+                    <pre style="background: #f8f9fa; padding: 10px; border-radius: 4px; border: 1px solid #ddd;"># After adding dependencies, check for conflicts
+pip check</pre>
+                    <p><small class="text-muted">If dependency version conflicts are hard to resolve, please refer to the <a href="https://github.com/Zyj061/SpikeCV/blob/main/.github/CONTRIBUTING/dependency_guide.md#%E5%B1%80%E9%83%A8%E4%BE%9D%E8%B5%96%E9%85%8D%E7%BD%AE%E7%89%B9%E6%AE%8A%E6%83%85%E5%86%B5" target="_blank">Dependency Management Guide</a>.</small></p>
+                </div>
+                <div class="col-md-6">
+                        <div style="margin-bottom: 1em; margin-top: 2em;">
+                            <h3><i style="color: #ffa915; margin-right: 0.3em;" class="fa fa-cubes"></i> Dependency Classification</h3>
+                        </div>
+                        <p>SpikeCV strictly divides dependencies into two categories:</p>
+                        <ul>
+                            <li>Core dependencies (e.g., <code>torch</code>, <code>numpy</code>): affect all algorithms; modifications require extreme caution.</li>
+                            <li>Optional dependencies: libraries required for specific algorithm types (e.g., <code>tracking</code>) or functional modules; <strong>using this approach is recommended</strong>.</li>
+                        </ul>
+                        <div style="margin-bottom: 1em; margin-top: 2em;">
+                            <h3><i style="color: #ffa915; margin-right: 0.3em;" class="fa fa-pencil"></i> Golden Rule</h3>
+                        </div>
+                        <p>When adding dependencies, follow the principle of minimal dependencies:</p>
+                        <ul>
+                            <li>Only add direct dependencies (the libraries you <code>import</code>); do not add transitive dependencies.</li>
+                            <li>Prefer using existing core dependencies and avoid duplicate dependencies (packages with similar functionality).</li>
+                        </ul>
+
+                </div>
+            </div>
+        </div>
+                        
+    </div>
+    </div>
+
+<div class="row" style="display: flex; align-items: center; justify-content: center; margin-top: 4em;">         
+        <div class="col-md-12">
+            <div class="blockquote-box blockquote-info clearfix">
+              <div class="heading" style="text-align: center; margin-bottom: 1.5em;">  
+                <h3>Step 3</h3>
+                <br/>
+              </div> 
+                <div class="square pull-left">
+                     <i class="fa fa-paper-plane fa-3x circle"></i>
+                </div>
+                <h4>
+                    Submit a Pull Request</h4>
+                <p>
+                    <p>
+                        After completing development and committing locally, follow the <strong><a href="https://github.com/Zyj061/SpikeCV?tab=contributing-ov-file#%E7%8E%AF%E5%A2%83%E4%BE%9D%E8%B5%96%E8%AE%B0%E5%BD%95" target="_blank">guidelines</a></strong> in <code>CONTRIBUTING.md</code> to check and record your environment dependencies,
+                        then open a PR targeting the <code>main</code> branch of <code>Zyj061/SpikeCV</code>, using the provided <strong><a href="https://github.com/Zyj061/SpikeCV?tab=contributing-ov-file#pr-%E6%8F%8F%E8%BF%B0%E6%A8%A1%E6%9D%BF" target="_blank">PR description template</a></strong> to describe your changes.
+                    </p>
+    			</p>
+            </div>
+            <div class="blockquote-box blockquote-success clearfix">
+                <div class="square pull-left">
+                     <i class="fa fa-comments-o fa-3x circle"></i>
+                </div>
+                <h4>
+                    Testing & Review</h4>
+                <p>
+                    The code will first pass all CI/CD pipeline checks. Then maintainers will review code quality, documentation completeness, and compatibility.
+                    Maintainers may leave comments on the PR with specific suggestions for improvements.
+                </p>
+            </div>
+            <div class="blockquote-box blockquote-primary clearfix">
+                <div class="square pull-left">
+                    <i class="fa fa-check-square-o fa-3x circle"></i>
+                </div>
+                <h4>
+                    Merge</h4>
+                <p>
+                    Once the PR passes all checks and reviews, maintainers will merge your code into the <code>main</code> branch. Thank you for your contribution!
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>    
+
+</section>
+
+<section class="blog_section layout_padding">
+    <div class="container" style="margin-top: 1.5em; margin-bottom: 10em;">
+
+        <div class="row">
+            <div class="col-md-12 col-lg-12 mx-auto">
+                <div class="box">
+                    <div class="detail-box" style="text-align: center;">
+                        <h2 style="margin-bottom: 0.7em;">
+                            Ready to become a <strong style="color:#eec338"> SpikeCV </strong> contributor?
+                        </h2>
+                        <p class="text-muted">
+                            For detailed contribution workflows, environment setup, template code, and advanced development advice, please be sure to read
+                        </p>
+                        <a href="https://github.com/Zyj061/SpikeCV?tab=contributing-ov-file"
+                            target="_blank" style="margin-top: 1em; margin-left: 1em;">
+                        <i class="fa fa-github" style="margin-right:6px;"></i> CONTRIBUTING.md
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+<!-- Dynamically load footer -->
+<div id="footer"></div>
+<script src="../assets/js/dynamic_load_header_footer.js"></script>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/619c6b6dd5.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1290,3 +1290,36 @@ width: 33px;
 color: #fab028;
 }
 
+/* Join.html page shared layout (zh/en) */
+#contributionTabs li a {
+	color: #333;
+	font-weight: bold;
+	transition: all 0.3s ease;
+	border: 1px solid transparent;
+	font-size: 18px;
+}
+#contributionTabs li a:hover, 
+#contributionTabs li a:focus,
+#contributionTabs li.active a {
+	color: #eec338 !important;
+	background-color: transparent !important;
+}
+
+#contributionTabs ~ div.tab-content{
+	background: #fff;
+	padding: 20px; 	
+}
+
+#contributionTabs ~ div.tab-content div.tab-pane {
+	font-size: 16px;
+}
+
+#contributionTabs ~ div.tab-content div.tab-pane p,
+#contributionTabs ~ div.tab-content div.tab-pane li {
+	margin-bottom: 15px;
+}
+
+.blog_section .box div.detail-box p.text-muted{
+	color:#888;
+	font-size: 16px;
+}
