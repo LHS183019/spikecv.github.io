@@ -29,3 +29,16 @@ fetch('footer.html')
   .then(data => {
     document.getElementById('footer').innerHTML = data;
   });
+
+// Back to Top Button functionality
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 700 || document.documentElement.scrollTop > 700) {
+    document.getElementById("back-to-top").style.display = "block";
+    setTimeout(() => document.getElementById("back-to-top").style.opacity = "1", 0); // Ensure opacity transition works
+  } else {
+    document.getElementById("back-to-top").style.display = "none";
+    document.getElementById("back-to-top").style.opacity = "0";
+  }
+}
