@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>SpikeCV</title>
+	<link rel="icon" href="../assets/logo/spikecv.png">
+	<!-- bootstrap core css -->
+	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+	<!-- Custom styles for our template -->
+	<link rel="stylesheet" href="../assets/css/bootstrap-theme.css" media="screen" >
+	<link rel="stylesheet" href="../assets/css/style.css">
+	<link href="../assets/css/responsive.css" rel="stylesheet" />
+	<!--[if lt IE 9]>
+	<script src="../assets/js/html5shiv.js"></script>
+	<script src="../assets/js/respond.min.js"></script>
+	<![endif]-->
+   
+</head>
+
+<body>
+
+<!-- Dynamically load navbar -->
+<div id="navbar"></div>
+
+<header id="head" class="secondary"></header>
+
+
+<section class="herotxt">
+<!--<div class="container text-center sectionBox">
+  <h2 >Welcome!</h2>
+  <p class="text-muted"> Nullam ac rhoncus sapien, non gravida purus. Alinon elit imperdiet congue. Integer ultricies<br/>
+    Sed elit imperdiet congue. Integer ultricies sed ligula eget tempus. </p>
+</div>-->
+<div class="container sectionBox">
+  <div class="row">
+    <div class="col-md-12" style="text-align: center;">
+      <span>
+        <strong style="color:#FFF317"> SpikeCV </strong>开源贡献指南
+      </span>
+      <p>        感谢您对 SpikeCV 项目的关注！您的每一份贡献都将推动脉冲视觉的发展
+</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="sectionBox" >
+<div class="container"> 
+    <div class="row" style="display: flex; align-items: center; justify-content: center; ">         
+        <div class="col-md-6" >
+          <div style="text-align: center;">  
+            <h3>跟随这份指南，开始您的开源贡献之旅！</h3>
+            <blockquote class="blockquote-1">
+            <p>“一起来吧，去触发一场蝴蝶效应。”</p>
+            <small>SpikeCV 团队</small> </blockquote>
+          </div> 
+        </div>
+        <div class="col-md-6">
+            <div class="blockquote-box blockquote-info clearfix">
+              <div class="heading">  
+                <h3>第一步</h3>
+                <br/>
+              </div> 
+                <div class="square pull-left">
+                    <i class="fa fa-github fa-3x circle"></i>
+                </div>
+                <h4>
+                    Fork & Clone</h4>
+                <p>
+                    请先 <strong>Fork</strong> 我们的 <a href="https://github.com/Zyj061/SpikeCV" target="_blank">GitHub 仓库</a> 并 Clone 到本地。
+    			</p>
+            </div>
+            <div class="blockquote-box blockquote-success clearfix">
+                <div class="square pull-left">
+                    <i class="fa fa-code-fork fa-3x circle"></i>
+                </div>
+                <h4>
+                    创建分支</h4>
+                <p>
+                    基于 <code>main</code> 分支创建您的功能分支。
+                    <br>命名格式示范：<code>feature/algorithm-name</code> 。
+                </p>
+            </div>
+            <div class="blockquote-box blockquote-primary clearfix">
+                <div class="square pull-left">
+                <i class="fa fa-cogs fa-3x circle"></i>                
+            </div>
+                <h4>
+                    配置开发环境</h4>
+                <p>
+                  根据 <a href="https://github.com/Zyj061/SpikeCV" target="_blank">README.md</a> 配置环境和下载依赖。
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 3em;">         
+        <div class="heading" style="text-align: center;">  
+            <h3>第二步</h3>
+            <br/>
+        </div> 
+        <!-- 动态切换栏 -->
+        <ul class="nav navbar nav-justified" id="contributionTabs" style="margin-bottom: 20px; border-bottom: 2px solid #eec338;">
+            <li class="active"><a href="#dependency" data-toggle="tab">管理依赖</a></li>
+            <li><a href="#algorithm" data-toggle="tab">贡献脉冲算法</a></li>
+        </ul>
+        <div class="tab-content" id="contributionTabContent">
+            <!-- 贡献算法选项卡 -->
+            <div class="tab-pane" id="algorithm">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div style="margin-bottom: 1em; margin-top: 2em;">
+                            <h3><i style="color: #ffa915; margin-right: 0.3em;" class="fa fa-code"></i> 算法开发</h3>
+                        </div>
+                        <p>在 <code>SpikeCV/spkProc/</code> 下选择合适的子模块（如 <code>filters</code>, <code>reconstruction</code> 等）创建您的算法文件 <code>your_algorithm.py</code>。</p>
+                        <ul>
+                            <li>类与接口：实现一个算法类 <code>YourAlgorithm</code>，一般还会实现例如 <code>__init__</code>（参数初始化） 和 <code>process</code>（算法主体）方法。</li>
+                            <li>代码风格：遵循 PEP 8，添加必要的注释、文档字符串、类型提示等。</li>
+                            <li>进度显示：推荐使用 <code>tqdm</code> 库显示算法处理进度。</li>
+                        </ul>
+                        <div style="margin-bottom: 1em; margin-top: 2em;">
+                            <h3><i style="color: #ffa915; margin-right: 0.3em;" class="fa fa-key"></i> 应用示例</h3>
+                        </div>
+                        <p>在 <code>SpikeCV/examples/</code> 添加 <code>test_your_algorithm.py</code>，展示从数据加载到结果输出的完整调用流程，帮助用户理解算法的使用方法。</p>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div style="margin-bottom: 1em; margin-top: 2em;">
+                            <h3><i style="color: #ffa915; margin-right: 0.3em;" class="fa fa-book"></i> 算法文档</h3>
+                        </div>
+                        <p>完整的贡献不仅仅是代码，我们使用 RST 文件管理文档：</p>
+                        <ul>
+                            <li>核心文档：更新 <code>docs/source/核心操作.rst</code>，添加您算法的原理及参数说明。</li>
+                            <li>示例文档：更新 <code>docs/source/使用例子.rst</code>，描述您的应用示例和预期结果。</li>
+                            <li>多媒体资源：您可以在 <code>docs/source/media/</code> 目录下添加结果图片/GIF并在文档中引用。</li>
+                        </ul>
+                        <p>我们在 <a href="https://github.com/Zyj061/SpikeCV?tab=contributing-ov-file#%E6%96%87%E6%A1%A3%E7%BB%93%E6%9E%84%E5%8F%82%E8%80%83" target="_blank">CONTRIBUTING.md</a> 中提供了文档的参考模板。</p>
+                        <p>之后，您的文档会被整合至 SpikeCV <a href="https://spikecv.readthedocs.io" target="_blank">官方文档</a>中。</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 依赖管理选项卡 -->
+        <div class="tab-pane active" id="dependency">
+            <div class="row">
+                <div class="col-md-6">
+                    <div style="margin-bottom: 1em; margin-top: 2em;">
+                        <h3><i style="color: #ffa915; margin-right: 0.3em;" class="fa fa-plus-square
+"></i> 添加依赖</h3>
+                    </div>
+                    <p>如果您需要添加新的依赖，请在 <code>pyproject.toml</code> 中配置可选依赖：</p>
+                    <pre style="background: #f8f9fa; padding: 10px; border-radius: 4px; border: 1px solid #ddd;">[project.optional-dependencies]
+your_deps_name  = [
+    "package>=1.0.0",
+    "package2>=2.0.0",
+]</pre>
+                    <pre style="background: #f8f9fa; padding: 10px; border-radius: 4px; border: 1px solid #ddd;"># 安装特定依赖：
+pip install -e ".[your_deps_name]"</pre>
+                    <pre style="background: #f8f9fa; padding: 10px; border-radius: 4px; border: 1px solid #ddd;"># 新增依赖后检查是否有冲突
+pip check</pre>
+                    <p><small class="text-muted">如果依赖版本冲突且难以解决，请参考 <a href="https://github.com/Zyj061/SpikeCV/blob/main/.github/CONTRIBUTING/dependency_guide.md#%E5%B1%80%E9%83%A8%E4%BE%9D%E8%B5%96%E9%85%8D%E7%BD%AE%E7%89%B9%E6%AE%8A%E6%83%85%E5%86%B5" target="_blank">依赖管理指南</a>。</small></p>
+                </div>
+                <div class="col-md-6">
+                        <div style="margin-bottom: 1em; margin-top: 2em;">
+                            <h3><i style="color: #ffa915; margin-right: 0.3em;" class="fa fa-cubes"></i> 依赖分类</h3>
+                        </div>
+                        <p>SpikeCV 将依赖严格分为两类：</p>
+                        <ul>
+                            <li>核心依赖（如 <code>torch</code>, <code>numpy</code>）：影响所有算法，修改需极其谨慎。</li>
+                            <li>可选依赖：特定算法类型（如 <code>tracking</code>）或功能模块需要的库，<strong>推荐使用此方式</strong>添加。</li>
+                        </ul>
+                        <div style="margin-bottom: 1em; margin-top: 2em;">
+                            <h3><i style="color: #ffa915; margin-right: 0.3em;" class="fa fa-pencil"></i> 金科玉律</h3>
+                        </div>
+                        <p>添加依赖时，请遵循最小化依赖原则：</p>
+                        <ul>
+                            <li>只添加主要依赖（您 <code>import</code> 的库），无须添加传递依赖</li>
+                            <li>优先使用已有的核心依赖，避免重复依赖（功能相似的包）</li>
+                        </ul>
+
+                </div>
+            </div>
+        </div>
+                        
+    </div>
+    </div>
+
+<div class="row" style="display: flex; align-items: center; justify-content: center; margin-top: 4em;">         
+        <div class="col-md-12">
+            <div class="blockquote-box blockquote-info clearfix">
+              <div class="heading" style="text-align: center; margin-bottom: 1.5em;">  
+                <h3>第三步</h3>
+                <br/>
+              </div> 
+                <div class="square pull-left">
+                     <i class="fa fa-paper-plane fa-3x circle"></i>
+                </div>
+                <h4>
+                    提交 Pull Request</h4>
+                <p>
+                    <p>
+                        完成开发并 commit 在本地后，按 <code>CONTRIBUTING.md</code> 的 <strong><a href="https://github.com/Zyj061/SpikeCV?tab=contributing-ov-file#%E7%8E%AF%E5%A2%83%E4%BE%9D%E8%B5%96%E8%AE%B0%E5%BD%95" target="_blank">指引</a></strong> 检查和记录您的环境依赖，
+                        然后发起 PR 提交至 <code>Zyj061/SpikeCV</code> 的 <code>main</code> 分支，并使用我们提供的 <strong><a href="https://github.com/Zyj061/SpikeCV?tab=contributing-ov-file#pr-%E6%8F%8F%E8%BF%B0%E6%A8%A1%E6%9D%BF" target="_blank">PR 描述模板</a></strong> 描述更改内容。
+                    </p>
+    			</p>
+            </div>
+            <div class="blockquote-box blockquote-success clearfix">
+                <div class="square pull-left">
+                     <i class="fa fa-comments-o fa-3x circle"></i>
+                </div>
+                <h4>
+                    测试与审查</h4>
+                <p>
+                    代码会先通过所有 CI/CD 流水线检查，然后维护者将审查代码质量、文档完整性及兼容性。
+                    维护者可能在 PR 中添加评论，提供具体的修改建议。
+                </p>
+            </div>
+            <div class="blockquote-box blockquote-primary clearfix">
+                <div class="square pull-left">
+                    <i class="fa fa-check-square-o fa-3x circle"></i>
+                </div>
+                <h4>
+                    代码合并</h4>
+                <p>
+                    当 PR 通过所有检查和审查后，维护者会将您的代码合并到 <code>main</code> 分支，感谢您的贡献！
+                </p>
+            </div>
+            <p>
+                您可以参考我们已合并的一个 PR 案例: <strong><a href="https://github.com/Zyj061/SpikeCV/pull/14" target="_blank">SNNTracker <i class="fa fa-external-link-square"></i></a></strong>
+            </p>
+        </div>
+    </div>
+</div>  <!-- /.container  -->
+</section> <!-- /.sectionBox  -->
+
+
+<!-- github链接卡片 -->
+<section class="blog_section layout_padding">
+    <div class="container" style="margin-top: 1.5em; margin-bottom: 10em;">
+
+        <div class="row">
+            <div class="col-md-12 col-lg-12 mx-auto">
+                <div class="box">
+                    <div class="detail-box" style="text-align: center;">
+                        <h2 style="margin-bottom: 0.7em;">
+                            准备好成为 <strong style="color:#eec338"> SpikeCV </strong> 的贡献者了吗？
+                        </h2>
+                        <p class="text-muted">
+                            详细的贡献流程、环境配置、模板代码及更高级的开发建议，请确认阅读
+                        </p>
+                        <a href="https://github.com/Zyj061/SpikeCV?tab=contributing-ov-file"
+                            target="_blank" style="margin-top: 1em; margin-left: 1em;">
+                        <i class="fa fa-github" style="margin-right:6px;"></i> CONTRIBUTING.md
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+<!-- Dynamically load footer -->
+<div id="footer"></div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/619c6b6dd5.js" crossorigin="anonymous"></script>
+<script src="../assets/js/dynamic_load_header_footer.js"></script>
+</body>
+</html>

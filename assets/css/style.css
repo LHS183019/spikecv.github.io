@@ -1290,3 +1290,70 @@ width: 33px;
 color: #fab028;
 }
 
+/* Join.html page shared layout (zh/en) */
+#contributionTabs li a {
+	color: #333;
+	font-weight: bold;
+	transition: all 0.3s ease;
+	border: 1px solid transparent;
+	font-size: 18px;
+}
+#contributionTabs li a:hover, 
+#contributionTabs li a:focus,
+#contributionTabs li.active a {
+	color: #eec338 !important;
+	background-color: transparent !important;
+}
+
+#contributionTabs ~ div.tab-content{
+	background: #fff;
+	padding: 20px; 	
+}
+
+#contributionTabs ~ div.tab-content div.tab-pane {
+	font-size: 16px;
+}
+
+#contributionTabs ~ div.tab-content div.tab-pane p,
+#contributionTabs ~ div.tab-content div.tab-pane li {
+	margin-bottom: 15px;
+}
+
+.blog_section .box div.detail-box p.text-muted{
+	color:#888;
+	font-size: 16px;
+}
+
+/* Back to Top Button */
+/* 返回顶部按钮 */
+#back-to-top {
+	z-index: 9999;
+    display: flex;
+    text-align: center;
+    line-height: 0px;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #c0c0c0;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px 0 #737373;
+    position: fixed;
+    bottom: 10%;
+    right: 20px;
+    /* opacity: .6; */
+	transition: all 0.5s;
+	font-size: 30px;
+}
+
+#back-to-top:hover {
+    background-color: #ffd446;
+    box-shadow: 0 0 20px 0 #ce8622;
+    transform: translate(0, -10px);
+}
+
+html {
+	scroll-behavior: smooth;
+}
